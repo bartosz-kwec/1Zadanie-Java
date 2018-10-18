@@ -1,1 +1,59 @@
-import java.....
+
+//MAIN
+
+package pkg1.zadanie.pio;
+import java.util.Random;
+
+public class ZadaniePIO {
+
+    public static void main(String[] args) {
+        System.out.println("Gra odgadywanie wylosowanej kostki");
+        Random r= new Random();
+        player p = new player();
+        int kostkaLosowanie,OdgadywanieLiczby;
+        do{
+            kostkaLosowanie=r.nextInt(6)+1;
+            OdgadywanieLiczby= p.guess();
+            System.out.println("Wylosowany numer z kostki : "+kostkaLosowanie);
+            System.out.println("Zgadywana liczba przez komputer :"+OdgadywanieLiczby);
+            if (kostkaLosowanie==OdgadywanieLiczby){
+                System.out.println("Brawo Gracz :"+p.getName()+" odgadł");
+            }
+        
+        
+        
+        }while(kostkaLosowanie!=OdgadywanieLiczby);
+    }
+    
+}
+
+//PLAYER
+
+
+package pkg1.zadanie.pio;
+import java.util.Random;
+import java.util.Scanner;
+
+public class player {
+    private String name="gracz";
+    private Random r = new Random();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name!=null||!name.isEmpty()){
+            this.name = name;
+        }
+    }
+    void dodajNazwe (){
+        Scanner r= new Scanner(System.in);
+        name=r.next();
+    }
+    
+    int guess(){
+        int liczba;
+        return liczba=r.nextInt(6)+1;
+    }
+}
